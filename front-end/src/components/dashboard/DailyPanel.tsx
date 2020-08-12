@@ -117,13 +117,17 @@ class DailyPanel extends React.Component<DailyPanelProps, DailyPanelState> {
       alerts = this.props.events.filter(
         ev => ev.alert_id !== null)
         .map(alertEv => {
-          return this.props.events!.find(ev => ev.id === alertEv.observation_event_id)!;
+          return this.props.events!.find(ev => ev.id === alertEv.observation_event_id)! || alertEv;
         })
         .reduce<CareEvent[][]>(
           (prev, cur) => {
             if (prev.length === 0) {
               prev[0] = [cur];
             } else {
+              if (!cur) {
+
+                alert(JSON.stringify(cur));
+              }
               let deltaDate = new Date(prev[prev.length - 1][0].timestamp).getTime()
                 - new Date(cur.timestamp).getTime();
 
