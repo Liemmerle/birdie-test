@@ -1,6 +1,8 @@
 import app from './application';
 
-const port = process.env.PORT || 8000;
+
+
+const port = process.env.BACK_END_PORT || 8000;
 
 app.listen(port, () => {
   // tslint:disable-next-line:no-console

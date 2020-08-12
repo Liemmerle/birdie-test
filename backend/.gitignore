@@ -4,5 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .nyc_output
+.env
 lib
 lib_test
+config.json
