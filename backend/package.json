@@ -14,10 +14,12 @@
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "test": "jest",
     "test:watch": "jest --watch",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build": "tsc && node ./lib/src/index.js"
   },
   "dependencies": {
     "@types/mysql": "^2.15.15",
+    "@types/validator": "^13.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "mysql": "^2.18.1",
