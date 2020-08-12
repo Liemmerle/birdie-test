@@ -39,7 +39,7 @@ class EventComponent extends React.Component<EventComponentProps, EventComponent
         if (!hiddenFields.find(v => v === k)) {
           elements.push(
             <StyledEventEntry key={k} variant={b = !b}>
-              {k.replace(/_/g, ' ')} : {typeof (value) !== 'object' ? value : 'Not implemented Yet'}
+              {k.replace(/_/g, ' ')} : {typeof (value) !== 'object' ? JSON.stringify(value) : 'Not implemented Yet'}
             </StyledEventEntry>);
         }
       }
